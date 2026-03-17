@@ -1,0 +1,49 @@
+# cursor-quality-tricks
+
+## Book Library API – FastAPI CRUD Tutorial
+
+A simple **Book Library** application demonstrating full CRUD operations with FastAPI, SQLite, and a minimal web UI.
+
+### Domain: Book Library
+
+- **Books** have: title, author, genre, year published, and availability status
+- Perfect for learning: Create, Read, Update, Delete patterns
+
+### Quick Start
+
+```bash
+pip install -r library-api/requirements.txt
+python run.py
+```
+
+Open **http://127.0.0.1:8100** for the web UI, or **http://127.0.0.1:8100/docs** for the interactive API docs.
+
+If port 8100 is already in use, stop the existing process first (e.g. `pkill -f "uvicorn main:app"` or close the terminal running it).
+
+### API Endpoints
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/api/books` | List all books |
+| GET | `/api/books/{id}` | Get one book |
+| POST | `/api/books` | Create a book |
+| PUT | `/api/books/{id}` | Update a book |
+| DELETE | `/api/books/{id}` | Delete a book |
+
+### Project Structure
+
+```
+library-api/
+├── main.py       # FastAPI app, routes, static serving
+├── models.py     # Pydantic schemas (request/response)
+├── schemas.py    # SQLAlchemy ORM model
+├── database.py   # SQLite connection
+├── crud.py       # Database operations
+├── static/       # Web UI
+│   ├── index.html
+│   ├── style.css
+│   └── app.js
+└── requirements.txt
+```
+
+Sample books are seeded on first run.

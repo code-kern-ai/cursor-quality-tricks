@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Library</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>📚 Book Library</h1>
+      <p class="subtitle">FastAPI CRUD Tutorial</p>
+    </header>
+
+    <section class="form-section">
+      <h2 id="form-title">Add New Book</h2>
+      <form id="book-form">
+        <input type="hidden" id="book-id">
+        <div class="form-row">
+          <input type="text" id="title" placeholder="Title" required>
+          <input type="text" id="author" placeholder="Author" required>
+        </div>
+        <div class="form-row">
+          <input type="text" id="genre" placeholder="Genre" required>
+          <input type="number" id="year" placeholder="Year" min="1000" max="2100" required>
+        </div>
+        <div class="form-row checkbox-row">
+          <label>
+            <input type="checkbox" id="available" checked>
+            Available
+          </label>
+          <div class="form-actions">
+            <button type="submit" id="submit-btn">Add Book</button>
+            <button type="button" id="cancel-btn" class="secondary" style="display:none">Cancel</button>
+          </div>
+        </div>
+      </form>
+    </section>
+
+    <section class="books-section">
+      <h2>Your Books</h2>
+      <div id="books-list"></div>
+      <p id="empty-state" class="empty-state">Loading...</p>
+    </section>
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

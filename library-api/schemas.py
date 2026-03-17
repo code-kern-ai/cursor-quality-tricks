@@ -1,6 +1,7 @@
 """SQLAlchemy ORM model for the books table."""
 
 from sqlalchemy import Boolean, Column, Integer, String
+
 from database import Base
 
 

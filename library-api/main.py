@@ -3,21 +3,29 @@
 from contextlib import asynccontextmanager
 from pathlib import Path
 
-from fastapi import FastAPI, Depends, HTTPException
-from fastapi.staticfiles import StaticFiles
+from fastapi import Depends, FastAPI, HTTPException
 from fastapi.responses import FileResponse
+from fastapi.staticfiles import StaticFiles
 from sqlalchemy.orm import Session
 
-from database import Base, SessionLocal, engine, get_db
-from schemas import BookORM
-from models import Book, BookCreate, BookUpdate
 from crud import (
-    get_books as crud_get_books,
-    get_book as crud_get_book,
     create_book as crud_create_book,
-    update_book as crud_update_book,
+)
+from crud import (
     delete_book as crud_delete_book,
 )
+from crud import (
+    get_book as crud_get_book,
+)
+from crud import (
+    get_books as crud_get_books,
+)
+from crud import (
+    update_book as crud_update_book,
+)
+from database import Base, SessionLocal, engine, get_db
+from models import Book, BookCreate, BookUpdate
+from schemas import BookORM
 
 # Create database tables
 Base.metadata.create_all(bind=engine)
@@ -30,9 +38,27 @@ async def lifespan(app: FastAPI):
     try:
         if db.query(BookORM).count() == 0:
             sample_books = [
-                BookORM(title="The Great Gatsby", author="F. Scott Fitzgerald", genre="Fiction", year_published=1925, is_available=True),
-                BookORM(title="1984", author="George Orwell", genre="Dystopian", year_published=1949, is_available=True),
-                BookORM(title="To Kill a Mockingbird", author="Harper Lee", genre="Fiction", year_published=1960, is_available=False),
+                BookORM(
+                    title="The Great Gatsby",
+                    author="F. Scott Fitzgerald",
+                    genre="Fiction",
+                    year_published=1925,
+                    is_available=True,
+                ),
+                BookORM(
+                    title="1984",
+                    author="George Orwell",
+                    genre="Dystopian",
+                    year_published=1949,
+                    is_available=True,
+                ),
+                BookORM(
+                    title="To Kill a Mockingbird",
+                    author="Harper Lee",
+                    genre="Fiction",
+                    year_published=1960,
+                    is_available=False,
+                ),
             ]
             for book in sample_books:
                 db.add(book)

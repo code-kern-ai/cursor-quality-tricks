@@ -1,0 +1,3 @@
+# Runtime dependencies for the Book Library API.
+# Pin versions live in library-api/requirements.txt.
+-r library-api/requirements.txt

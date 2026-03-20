@@ -12,7 +12,7 @@ A simple **Book Library** application demonstrating full CRUD operations with Fa
 From the project root:
 
 ```bash
-pip install -r library-api/requirements.txt
+pip install -r requirements.txt
 python run.py
 ```
 
@@ -24,6 +24,8 @@ python main.py
 ```
 
 Open **http://127.0.0.1:8100** for the web UI, or **http://127.0.0.1:8100/docs** for the interactive API docs. If port 8100 is in use, stop the existing server first.
+
+**Tests and quality tools (pytest, ruff, mypy, …):** from the repo root run `pip install -r requirements-dev.txt`; from this directory run `pip install -r requirements-dev.txt`. Then use `make check` at the repo root.
 
 ## API Endpoints
 
@@ -48,7 +50,8 @@ library-api/
 │   ├── index.html
 │   ├── style.css
 │   └── app.js
-└── requirements.txt
+├── requirements.txt
+└── requirements-dev.txt
 ```
 
-Sample books are seeded on first run.
+Sample books are seeded on first run. The parent directory also has `requirements.txt` / `requirements-dev.txt` that delegate to these files—see the main repo README.

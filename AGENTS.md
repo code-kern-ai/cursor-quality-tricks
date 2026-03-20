@@ -5,7 +5,7 @@ This repo is a **tutorial for code quality and automated testing** intended to w
 ## Project overview
 
 - **Book Library API**: FastAPI CRUD app in `library-api/` with SQLite and a minimal web UI.
-- **Run the app**: `pip install -r library-api/requirements.txt` then `python run.py`. Open http://127.0.0.1:8100.
+- **Run the app**: `pip install -r requirements.txt` (or `-r library-api/requirements.txt`) then `python run.py`. Open http://127.0.0.1:8100.
 
 ## Quality and testing (required before commit)
 
@@ -26,8 +26,10 @@ This repo is a **tutorial for code quality and automated testing** intended to w
 ### First-time setup
 
 ```bash
-pip install -r library-api/requirements-dev.txt
+pip install -r requirements-dev.txt
 ```
+
+(Same as `-r library-api/requirements-dev.txt`.)
 
 ### What each step does
 

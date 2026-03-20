@@ -1,0 +1,3 @@
+# Development: tests, lint, format, types, complexity (includes runtime deps).
+# Pin lists live in library-api/requirements-dev.txt.
+-r library-api/requirements-dev.txt

@@ -1,5 +1,5 @@
 # Code quality and testing - run from repo root.
-# Install dev deps: pip install -r library-api/requirements-dev.txt
+# Install dev deps: pip install -r requirements-dev.txt
 
 .PHONY: test lint format quality typecheck check all
 

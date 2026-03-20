@@ -14,9 +14,11 @@ A simple **Book Library** application demonstrating full CRUD operations with Fa
 ### Quick Start
 
 ```bash
-pip install -r library-api/requirements.txt
+pip install -r requirements.txt
 python run.py
 ```
+
+(Equivalent: `pip install -r library-api/requirements.txt`.)
 
 Open **http://127.0.0.1:8100** for the web UI, or **http://127.0.0.1:8100/docs** for the interactive API docs.
 
@@ -35,18 +37,33 @@ If port 8100 is already in use, stop the existing process first (e.g. `pkill -f 
 ### Project Structure
 
 ```
-library-api/
-├── main.py       # FastAPI app, routes, static serving
-├── models.py     # Pydantic schemas (request/response)
-├── schemas.py    # SQLAlchemy ORM model
-├── database.py   # SQLite connection
-├── crud.py       # Database operations
-├── static/       # Web UI
-│   ├── index.html
-│   ├── style.css
-│   └── app.js
-└── requirements.txt
+.
+├── requirements.txt          # repo-root shim → library-api/requirements.txt
+├── requirements-dev.txt      # repo-root shim → library-api/requirements-dev.txt
+├── Makefile
+├── run.py
+└── library-api/
+    ├── main.py       # FastAPI app, routes, static serving
+    ├── models.py     # Pydantic schemas (request/response)
+    ├── schemas.py    # SQLAlchemy ORM model
+    ├── database.py   # SQLite connection
+    ├── crud.py       # Database operations
+    ├── static/       # Web UI
+    │   ├── index.html
+    │   ├── style.css
+    │   └── app.js
+    ├── requirements.txt      # runtime pins (FastAPI, uvicorn, SQLAlchemy)
+    └── requirements-dev.txt  # dev pins + `-r requirements.txt`
 ```
+
+**Dependencies from the repo root**
+
+| File | Purpose |
+|------|---------|
+| `requirements.txt` | Runtime only; includes `library-api/requirements.txt`. |
+| `requirements-dev.txt` | Everything for `make check` (pytest, httpx, ruff, mypy, radon, …); includes `library-api/requirements-dev.txt`, which in turn pulls in the runtime set. |
+
+You can install from either the repo root (paths in the table) or from `library-api/` using `pip install -r requirements.txt` / `pip install -r requirements-dev.txt` there—same package sets, different relative paths.
 
 Sample books are seeded on first run.
 
@@ -57,8 +74,10 @@ This repo is set up so that **Cursor (and you) can run automated checks before c
 **First-time setup (dev dependencies):**
 
 ```bash
-pip install -r library-api/requirements-dev.txt
+pip install -r requirements-dev.txt
 ```
+
+(Same packages as `pip install -r library-api/requirements-dev.txt`.)
 
 **Run the full quality pipeline (lint, format, typecheck, complexity, tests):**
 

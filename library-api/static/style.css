@@ -4,8 +4,8 @@
 
 body {
   font-family: "Segoe UI", system-ui, sans-serif;
-  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-  color: #e8e8e8;
+  background: linear-gradient(135deg, #14221a 0%, #0d2e22 100%);
+  color: #e8f0ec;
   min-height: 100vh;
   margin: 0;
   padding: 2rem;
@@ -28,7 +28,7 @@ h1 {
 }
 
 .subtitle {
-  color: #94a3b8;
+  color: #8fa89a;
   font-size: 0.9rem;
   margin-top: 0.25rem;
 }
@@ -45,7 +45,7 @@ h1 {
   font-size: 1rem;
   font-weight: 500;
   margin: 0 0 1rem 0;
-  color: #cbd5e1;
+  color: #b8d4c4;
 }
 
 .form-row {
@@ -65,12 +65,12 @@ input[type="number"] {
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 8px;
   background: rgba(0, 0, 0, 0.2);
-  color: #e8e8e8;
+  color: #e8f0ec;
   font-size: 0.95rem;
 }
 
 input::placeholder {
-  color: #64748b;
+  color: #5c7568;
 }
 
 .checkbox-row {
@@ -106,20 +106,20 @@ button:hover {
 }
 
 #submit-btn {
-  background: #3b82f6;
-  color: white;
+  background: #16a34a;
+  color: #f0fdf4;
 }
 
 button.secondary {
   background: rgba(255, 255, 255, 0.15);
-  color: #e8e8e8;
+  color: #e8f0ec;
 }
 
 .books-section h2 {
   font-size: 1rem;
   font-weight: 500;
   margin: 0 0 1rem 0;
-  color: #cbd5e1;
+  color: #b8d4c4;
 }
 
 .book-card {
@@ -143,7 +143,7 @@ button.secondary {
 .book-info p {
   margin: 0.25rem 0 0 0;
   font-size: 0.85rem;
-  color: #94a3b8;
+  color: #8fa89a;
 }
 
 .badge {
@@ -174,8 +174,8 @@ button.secondary {
 }
 
 .btn-edit {
-  background: rgba(59, 130, 246, 0.3);
-  color: #93c5fd;
+  background: rgba(52, 211, 153, 0.25);
+  color: #6ee7b7;
 }
 
 .btn-delete {
@@ -184,7 +184,7 @@ button.secondary {
 }
 
 .empty-state {
-  color: #64748b;
+  color: #5c7568;
   font-size: 0.9rem;
   text-align: center;
   padding: 2rem;
